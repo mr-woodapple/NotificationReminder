@@ -65,6 +65,8 @@ captures/
 .idea/modules.xml
 # Comment next line if keeping position of elements in Navigation Editor is relevant for you
 .idea/navEditor.xml
+.idea/*
+
 
 # Keystore files
 # Uncomment the following lines if you do not want to check your keystore files in.
@@ -128,3 +130,9 @@ lint/tmp/
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
+# Manually added
+build.gradle
+gradle.properties
+gradlew
+gradlew.bat
+settings.gradle
