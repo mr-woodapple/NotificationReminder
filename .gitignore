@@ -131,7 +131,7 @@ lint/tmp/
 hs_err_pid*
 
 # Manually added
-build.gradle
+# build.gradle
 gradle.properties
 gradlew
 gradlew.bat
