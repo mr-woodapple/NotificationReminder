@@ -41,31 +41,31 @@ public class MainActivity extends AppCompatActivity {
     // Where we store the input from the user to display in the second activity
     public static final String EXTRA_MESSAGE = "com.example.NotificationReminder.MESSAGE";
 
+    // remove this?
     Button notificationBtn;
 
-
-    /** Called when the user taps the Send button */
-    // Method needs to be void, only have View as a parameter and be public to work with onClick()
-    public void sendMessage(View view) {
-
-        // Display the second activity when someone clicks on the first button
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editTextTextPersonName);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-
-    }
 
     /** Called when the user taps the "Create Notification" button */
     public void triggerNotification(View view) {
 
+        // Get user input from the text inputs, clear after user has input his text
+        EditText editNotificationTitle = findViewById(R.id.InputNotificationTitle);
+        EditText editNotificationText = findViewById(R.id.InputNotificationText);
+
+        String notificationTitle = editNotificationTitle.getText().toString();
+        String notificationText = editNotificationText.getText().toString();
+
+        editNotificationTitle.getText().clear();
+        editNotificationText.getText().clear();
+
+
         // This is where the notification get's created
         NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "defaultNotificationChannel")
                 .setSmallIcon(R.drawable.ic_android_blue_24dp)
-                .setContentTitle("Benachrichtigung 1")
-                .setContentText("Dies ist der Inhalt ihrer Benachrichtigung")
+                .setContentTitle(notificationTitle)
+                .setContentText(notificationText)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                //.addAction(R.drawable.ic_android_blue_24dp, getString(R.string.delete), deletePendingIntent); Unecessary for now
 
         NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
         managerCompat.notify(123, builder.build());
