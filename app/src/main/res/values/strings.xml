@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Notification Reminder</string>
-    <string name="channel_description">Notification Description J</string>
-    <string name="channel_name">Notification Channel Name J</string>
+    <string name="channel_description">Notification Description</string>
+    <string name="channel_name">Notification Channel Name</string>
     <string name="hint_notification_title">Enter Notification Title</string>
     <string name="hint_notification_text">Enter Notification Text</string>
     <string name="delete">Löschen</string>
