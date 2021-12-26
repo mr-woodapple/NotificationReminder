@@ -12,4 +12,7 @@
     <color name="lightBlue">#e3f2fd</color>
     <color name="darkBlue">#023e7d</color>
 
+    <color name="nightBlue">#131d25</color>
+    <color name="nightLightBlue">#1d262a</color>
+
 </resources>

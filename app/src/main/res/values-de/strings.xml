@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Notify</string>
-    <string name="channel_description">Benachrichtigungen Beschreibung</string>
+    <string name="channel_description">Standard Benachrichtungskanal</string>
     <string name="channel_name">"Benachrichtungskanal "</string>
     <string name="hint_notification_title">Titel der Benachrichtigung</string>
     <string name="hint_notification_text">Text der Benachrichtigung</string>
