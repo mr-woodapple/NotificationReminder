@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimaryVariant"
+
     tools:context=".InfoActivity">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
+        android:id="@+id/appBarLayoutSub"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:background="?attr/colorPrimaryVariant"
@@ -19,14 +20,15 @@
         <!-- TODO: Add back button -->
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
+            android:id="@+id/topAppBarSub"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:paddingStart="16dp"
             android:paddingLeft="16dp"
             android:paddingEnd="16dp"
             android:paddingRight="16dp"
-            app:menu="@menu/top_app_bar"
+            app:menu="@menu/top_app_bar_sub"
+            app:navigationIcon="@drawable/ic_arrow_back_24"
             app:title="@string/app_name" />
 
     </com.google.android.material.appbar.AppBarLayout>
