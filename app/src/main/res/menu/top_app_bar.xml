@@ -13,7 +13,7 @@
         android:id="@+id/action_info"
         android:icon="@drawable/ic_info_24"
         android:title="Information"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
 
 
     <!-- Settings, should always be in the overflow, currently not in use

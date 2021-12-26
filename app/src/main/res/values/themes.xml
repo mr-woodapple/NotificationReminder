@@ -3,8 +3,8 @@
     <style name="Theme.NotificationReminder" parent="Theme.Material3.Light.NoActionBar">
 
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/backgroundMutedPink</item>
+        <item name="colorPrimary">@color/darkBlue</item>
+        <item name="colorPrimaryVariant">@color/lightBlue</item>
         <item name="colorOnPrimary">@color/white</item>
 
         <!-- Secondary brand color. -->
@@ -13,8 +13,11 @@
         <item name="colorOnSecondary">@color/black</item>
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/backgroundMutedPink</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Set the status bar text to dark -->
+        <item name="android:windowLightStatusBar">true</item>
 
         <!-- Customize your theme here. -->
+
     </style>
 </resources>

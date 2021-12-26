@@ -1,8 +1,12 @@
 <resources>
-    <string name="app_name">Notification Reminder</string>
+    <string name="app_name">Notify</string>
     <string name="channel_description">Notification Description</string>
     <string name="channel_name">Notification Channel Name</string>
     <string name="hint_notification_title">Enter Notification Title</string>
     <string name="hint_notification_text">Enter Notification Text</string>
-    <string name="delete">Löschen</string>
+    <string name="delete">Delete</string>
+    <string name="btn_create_reminder">Create Reminder</string>
+    <string name="info_createReminderHeading">Create a new reminder</string>
+    <string name="info_createReminderSubtext">Enter title and description of your reminder</string>
+    <string name="snackbar_notificationCreated">Reminder was set</string>
 </resources>

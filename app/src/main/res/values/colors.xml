@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- Custom colors -->
-    <color name="backgroundMutedPink">#FFD2C0DA</color>
+    <color name="lightBlue">#e3f2fd</color>
+    <color name="darkBlue">#023e7d</color>
 
 </resources>
