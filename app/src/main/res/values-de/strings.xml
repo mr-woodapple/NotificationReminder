@@ -10,4 +10,5 @@
     <string name="info_createReminderHeading">Neue Erinnerung erstellen</string>
     <string name="info_createReminderSubtext">Überschrift und Text der Erinnerung angeben</string>
     <string name="snackbar_notificationCreated">Erinnerung wurde erstellt</string>
+    <string name="info_aboutPageText">Notify ist eine einfach Art genau dort Erinnerungen zu erstellen, wo Sie oft hinschauen: In Ihren Benachrichtungen.</string>
 </resources>

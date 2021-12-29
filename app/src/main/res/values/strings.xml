@@ -9,4 +9,5 @@
     <string name="info_createReminderHeading">Create a new reminder</string>
     <string name="info_createReminderSubtext">Enter title and description of your reminder</string>
     <string name="snackbar_notificationCreated">Reminder was set</string>
+    <string name="info_aboutPageText">Notify is a quick and easy to use way to set a reminder in your notifications, the place you\'ll check regulary on your phone.</string>
 </resources>
