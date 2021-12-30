@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
@@ -14,14 +13,19 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
-import android.widget.Button;
 import android.widget.EditText;
-
 import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.textfield.TextInputLayout;
+
+import java.sql.Time;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 
 public class MainActivity extends AppCompatActivity {
+
+
+    public int notificationId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +82,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    // ID for the notifications (each notification has a unique id)
-    public int notificationId = 0;
-
-    /** Called when the user taps the "Create Notification" button */
+    /**
+     * Called when the user taps the "Create Notification" button
+     * @param view
+     */
     public void triggerNotification(View view) {
 
         // Get user input from the text inputs, clear after user has input his text
@@ -103,15 +106,23 @@ public class MainActivity extends AppCompatActivity {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
                 //.addAction(R.drawable.ic_android_blue_24dp, getString(R.string.delete), deletePendingIntent); Unecessary for now
 
+        /**
+         *  Creates a unique ID based on the current timestamp (only time, no date included)
+         *  and sets it as the notificationId -> making sure that no ID is double
+         */
         NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
+        // Convert timestamp to INT
+        String timestamp = java.time.LocalTime.now().toString();
+        String timestampCleaned = timestamp.replace(":", "")
+                                            .replace(".", "");
+
+        notificationId = Integer.parseInt(timestampCleaned);
         managerCompat.notify(notificationId, builder.build());
+
 
         // Add snackbar to give the user feedback that something happened
         Snackbar.make(view, R.string.snackbar_notificationCreated, Snackbar.LENGTH_LONG)
                 .show();
 
-        // Increase notificationID +1
-        notificationId += 1;
     }
-
 }
