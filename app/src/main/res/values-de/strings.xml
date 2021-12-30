@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Notify</string>
     <string name="channel_description">Standard Benachrichtungskanal</string>
-    <string name="channel_name">"Benachrichtungskanal "</string>
+    <string name="channel_name">"Standard Benachrichtungskanal "</string>
     <string name="hint_notification_title">Titel der Benachrichtigung</string>
     <string name="hint_notification_text">Text der Benachrichtigung</string>
     <string name="delete">Löschen</string>
@@ -11,4 +11,5 @@
     <string name="info_createReminderSubtext">Überschrift und Text der Erinnerung angeben</string>
     <string name="snackbar_notificationCreated">Erinnerung wurde erstellt</string>
     <string name="info_aboutPageText">Notify ist eine einfach Art genau dort Erinnerungen zu erstellen, wo Sie oft hinschauen: In Ihren Benachrichtungen.</string>
+    <string name="activityName_about">Über Notify</string>
 </resources>

@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
         // This is where the notification get's created
         NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "defaultNotificationChannel")
-                .setSmallIcon(R.drawable.ic_android_blue_24dp)
+                .setSmallIcon(R.mipmap.ic_launcher_notify_round)
                 .setContentTitle(notificationTitle)
                 .setContentText(notificationText)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);

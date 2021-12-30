@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Notify</string>
     <string name="channel_description">Standard notification channel</string>
-    <string name="channel_name">Notification channel</string>
+    <string name="channel_name">Standard Notification Channel</string>
     <string name="hint_notification_title">Enter Notification Title</string>
     <string name="hint_notification_text">Enter Notification Text</string>
     <string name="delete">Delete</string>
@@ -10,4 +10,5 @@
     <string name="info_createReminderSubtext">Enter title and description of your reminder</string>
     <string name="snackbar_notificationCreated">Reminder was set</string>
     <string name="info_aboutPageText">Notify is a quick and easy to use way to set a reminder in your notifications, the place you\'ll check regulary on your phone.</string>
+    <string name="activityName_about">About Notify</string>
 </resources>

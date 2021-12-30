@@ -6,11 +6,11 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.notificationreminder"
+        applicationId 'de.holzapfelgrafik.notificationreminder'
         minSdk 27
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName '0.2'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

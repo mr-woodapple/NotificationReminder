@@ -1,19 +1,19 @@
 package com.example.notificationreminder;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
 
-import com.google.android.material.appbar.AppBarLayout;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+import com.example.notificationreminder.BuildConfig;
 
 public class InfoActivity extends AppCompatActivity {
+
+    // Gets the version code & version name from the gradle build file
+    int versionCode = BuildConfig.VERSION_CODE;
+    String versionName = BuildConfig.VERSION_NAME;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,10 @@ public class InfoActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        // Set the version name text view
+        TextView versionNameTextView = findViewById(R.id.textView_versionName);
+        versionNameTextView.setText("Version: " + versionName);
 
     }
 
