@@ -16,10 +16,6 @@ import android.content.Intent;
 import android.widget.EditText;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.sql.Time;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /** Register toolbar as top app bar */
+        // Register toolbar as top app bar
         Toolbar topAppBar = (Toolbar) findViewById(R.id.topAppBar);
         setSupportActionBar(topAppBar);
 
-        /** Create notification channel if Android version > Oreo */
+        // Create notification channel if Android version > Oreo
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // Get misc information
             CharSequence name = getString(R.string.channel_name);
@@ -54,7 +50,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // Set up the menu in the top bar
+    /**
+     *  Set up the menu in the top bar
+     * @param menu
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -62,7 +61,12 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    // Handles clicks on the menu bar icons
+    /**
+     * Handles clicks on the menu bar icons
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -106,21 +110,18 @@ public class MainActivity extends AppCompatActivity {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
                 //.addAction(R.drawable.ic_android_blue_24dp, getString(R.string.delete), deletePendingIntent); Unecessary for now
 
-        /**
-         *  Creates a unique ID based on the current timestamp (only time, no date included)
-         *  and sets it as the notificationId -> making sure that no ID is double
-         */
+
+        // Creates a unique ID based on the current timestamp (only time, no date included)
+        // and convert it to an int
         NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
-        // Convert timestamp to INT
         String timestamp = java.time.LocalTime.now().toString();
         String timestampCleaned = timestamp.replace(":", "")
                                             .replace(".", "");
-
         notificationId = Integer.parseInt(timestampCleaned);
         managerCompat.notify(notificationId, builder.build());
 
 
-        // Add snackbar to give the user feedback that something happened
+        // Add snackbar to give the user feedback that the notification was created
         Snackbar.make(view, R.string.snackbar_notificationCreated, Snackbar.LENGTH_LONG)
                 .show();
 
