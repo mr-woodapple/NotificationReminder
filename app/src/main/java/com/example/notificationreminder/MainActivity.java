@@ -107,6 +107,9 @@ public class MainActivity extends AppCompatActivity {
                 .setSmallIcon(R.mipmap.ic_launcher_notify_round)
                 .setContentTitle(notificationTitle)
                 .setContentText(notificationText)
+                // Allows to have an expandable notification (& much more content)
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText(notificationText))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
                 //.addAction(R.drawable.ic_android_blue_24dp, getString(R.string.delete), deletePendingIntent); Unecessary for now
 
