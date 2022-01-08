@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         Intent deleteIntent = new Intent(this, NotificationReceiver.class);
         deleteIntent.setAction("ACTION_DELETE_NOTIFICATION");
         deleteIntent.putExtra("ID", notificationId);
-        PendingIntent deletePendingIntent = PendingIntent.getBroadcast(this, 0, deleteIntent, PendingIntent.FLAG_IMMUTABLE);
+        PendingIntent deletePendingIntent = PendingIntent.getBroadcast(this, notificationId, deleteIntent, PendingIntent.FLAG_IMMUTABLE);
 
 
         // This is where the notification gets created
