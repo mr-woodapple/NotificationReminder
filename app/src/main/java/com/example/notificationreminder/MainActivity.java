@@ -6,6 +6,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -92,6 +93,17 @@ public class MainActivity extends AppCompatActivity {
      */
     public void triggerNotification(View view) {
 
+        // Create a notificationId for everything that's coming
+        generateNotificationID();
+
+
+        // Creates an intent to communicate with the BroadcastReceiver
+        Intent deleteIntent = new Intent(this, MyBroadcastReceiver.class);
+        deleteIntent.setAction(Intent.ACTION_DELETE);
+        deleteIntent.putExtra("notificationId", notificationId);
+        PendingIntent deletePendingIntent = PendingIntent.getBroadcast(this, 0, deleteIntent, 0);
+
+
         // Get user input from the text inputs, clear after user has input his text
         EditText editNotificationTitle = findViewById(R.id.inputNotificationTitle);
         EditText editNotificationText = findViewById(R.id.inputNotificationText);
@@ -102,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         editNotificationTitle.getText().clear();
         editNotificationText.getText().clear();
 
+
         // This is where the notification get's created
         NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "defaultNotificationChannel")
                 .setSmallIcon(R.mipmap.ic_launcher_notify_round)
@@ -110,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
                 // Allows to have an expandable notification (& much more content)
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText(notificationText))
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-                //.addAction(R.drawable.ic_android_blue_24dp, getString(R.string.delete), deletePendingIntent); Unecessary for now
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .addAction(R.drawable.ic_android_blue_24dp, getString(R.string.delete), deletePendingIntent);
 
 
         // Creates a unique ID based on the current timestamp (only time, no date included)
@@ -129,4 +142,14 @@ public class MainActivity extends AppCompatActivity {
                 .show();
 
     }
+
+    public int generateNotificationID() {
+        String timestamp = java.time.LocalTime.now().toString();
+        String timestampCleaned = timestamp.replace(":", "")
+                .replace(".", "");
+        notificationId = Integer.parseInt(timestampCleaned);
+
+        return notificationId;
+    }
+
 }
