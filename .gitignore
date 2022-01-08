@@ -132,7 +132,7 @@ hs_err_pid*
 
 # Manually added
 # build.gradle
-gradle.properties
-gradlew
-gradlew.bat
-settings.gradle
+#gradle.properties
+#gradlew
+#gradlew.bat
+#settings.gradle
