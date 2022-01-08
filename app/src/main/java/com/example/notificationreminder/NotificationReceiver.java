@@ -4,12 +4,19 @@ import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
 
 public class NotificationReceiver extends BroadcastReceiver {
 
+    /**
+     * Allows the user to delete the notification from an addAction in the notification.
+     *
+     * Grabs the generated notificationId, creates a NotificationManager and then cancels
+     * the notification with the given id.
+     *
+     * @param context
+     * @param intent
+     */
     @Override
     public void onReceive(Context context, Intent intent) {
 

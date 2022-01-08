@@ -20,7 +20,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
+
     public int notificationId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,13 +89,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * Called when the user taps the "Create Notification" button
+     * Called when the user taps the "Create Notification" button, handles the entire process
+     * of getting the user input, handeling intents and adding a snackbar to give the user feedback.
+     *
      * @param view
      */
     public void triggerNotification(View view) {
 
         // Create a notificationId for everything that's coming
-        generateNotificationID();
+        generateNotificationId();
 
 
         // Get user input from the text inputs, clear after user has input his text
@@ -107,19 +111,20 @@ public class MainActivity extends AppCompatActivity {
         editNotificationText.getText().clear();
 
 
-        // Creates an intent to communicate with the BroadcastReceiver (NotificationReceiver)
+        // Creates an intent to communicate with the BroadcastReceiver (NotificationReceiver) and
+        // adds the notificationId to it
         Intent deleteIntent = new Intent(this, NotificationReceiver.class);
+        deleteIntent.setAction("ACTION_DELETE_NOTIFICATION");
         deleteIntent.putExtra("ID", notificationId);
         sendBroadcast(deleteIntent);
-        PendingIntent deletePendingIntent = PendingIntent.getBroadcast(this, 0, deleteIntent, 0);
+        PendingIntent deletePendingIntent = PendingIntent.getBroadcast(this, 0, deleteIntent, PendingIntent.FLAG_IMMUTABLE);
 
 
-        // This is where the notification get's created
+        // This is where the notification gets created
         NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "defaultNotificationChannel")
                 .setSmallIcon(R.mipmap.ic_launcher_notify_round)
                 .setContentTitle(notificationTitle)
                 .setContentText(notificationText)
-                // Allows to have an expandable notification (& much more content)
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText(notificationText))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
@@ -139,11 +144,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * Generates an INT that generated from the current time, then cleans it and returns it
+     * Generates an int number that is the current time, then cleans it and returns it
      *
      * @return
      */
-    public int generateNotificationID() {
+    public int generateNotificationId() {
 
         String timestamp = java.time.LocalTime.now().toString();
         String timestampCleaned = timestamp.replace(":", "")
