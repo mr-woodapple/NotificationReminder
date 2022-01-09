@@ -118,12 +118,14 @@ public class MainActivity extends AppCompatActivity {
         String notificationTitle = editNotificationTitle.getText().toString();
         String notificationText = editNotificationText.getText().toString();
 
+        editNotificationTitle.getText().clear();
+        editNotificationText.getText().clear();
+
+
+        // Set notificationText to be NotificationTitle if the text is empty
         if (notificationText.equals("")){
             notificationText = notificationTitle;
         }
-
-        editNotificationTitle.getText().clear();
-        editNotificationText.getText().clear();
 
 
         // Creates an intent to communicate with the BroadcastReceiver (NotificationReceiver) and

@@ -12,4 +12,5 @@
     <string name="snackbar_notificationCreated">Erinnerung wurde erstellt</string>
     <string name="info_aboutPageText">Notify ist eine einfach Art genau dort Erinnerungen zu erstellen, wo Sie oft hinschauen: In Ihren Benachrichtungen.</string>
     <string name="activityName_about">Über Notify</string>
+    <string name="info_checkboxSetPermanent">Benachrichtigung anpinnen?</string>
 </resources>
