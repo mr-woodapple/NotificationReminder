@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -100,6 +101,16 @@ public class MainActivity extends AppCompatActivity {
         generateNotificationId();
 
 
+        // Creates the checkbox and sets a boolean
+        CheckBox checkBoxSetPermanent = findViewById(R.id.checkboxSetPermanent);
+        boolean booleanSetPermanent = false;
+        if (checkBoxSetPermanent.isChecked()){
+            booleanSetPermanent = true;
+        } else {
+            booleanSetPermanent = false;
+        }
+
+
         // Get user input from the text inputs, clear after user has input his text
         EditText editNotificationTitle = findViewById(R.id.inputNotificationTitle);
         EditText editNotificationText = findViewById(R.id.inputNotificationText);
@@ -126,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
                 .setContentText(notificationText)
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText(notificationText))
+                // Sets whether the notification is permanent
+                .setOngoing(booleanSetPermanent)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .addAction(R.drawable.ic_info_24, getString(R.string.delete), deletePendingIntent);
 
