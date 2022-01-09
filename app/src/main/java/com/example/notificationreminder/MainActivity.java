@@ -118,6 +118,10 @@ public class MainActivity extends AppCompatActivity {
         String notificationTitle = editNotificationTitle.getText().toString();
         String notificationText = editNotificationText.getText().toString();
 
+        if (notificationText.equals("")){
+            notificationText = notificationTitle;
+        }
+
         editNotificationTitle.getText().clear();
         editNotificationText.getText().clear();
 
