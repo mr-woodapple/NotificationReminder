@@ -7,6 +7,11 @@ The app is available on Google Play here: https://play.google.com/store/apps/det
 
 ## Changelog
 
+### V 0.3
+- Added option to make notifications permanent (you cannot swipe them away accidentally)
+- Added a "Delete" button to the notification
+- If the input for the notification text is empty, the title will be duplicated into the text
+
 ### V0.2
 - Initial upload to Google Play
 - Standard functionality with setting a reminder supported
