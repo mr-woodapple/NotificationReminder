@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         generateNotificationId();
 
 
-        // Creates the checkbox and sets a boolean
+        // Creates the checkbox and sets a boolean to make a notification permanent
         CheckBox checkBoxSetPermanent = findViewById(R.id.checkboxSetPermanent);
         boolean booleanSetPermanent = false;
         if (checkBoxSetPermanent.isChecked()){
