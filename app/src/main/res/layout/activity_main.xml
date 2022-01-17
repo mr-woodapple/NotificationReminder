@@ -107,15 +107,32 @@
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <CheckBox
-                android:id="@+id/checkboxSetPermanent"
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:checked="false"
-                android:text="@string/info_checkboxSetPermanent" />
+                android:layout_marginEnd="8dp">
+
+                <CheckBox
+                    android:id="@+id/checkboxSetPermanent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:checked="false"
+                    android:text="@string/info_checkboxSetPermanent" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_info_24"
+                    android:contentDescription="To be entered"
+                    android:onClick="seeHelp"
+                    style="?android:attr/borderlessButtonStyle" />
+
+
+            </LinearLayout>
 
             <Button
                 android:layout_width="wrap_content"

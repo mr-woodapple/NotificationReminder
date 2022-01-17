@@ -1,12 +1,16 @@
 package com.example.notificationreminder;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+
+import android.app.Dialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -177,4 +181,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // Called when the user taps the "help icon" right next to the "Set permanent" checkbox
+    public Dialog seeHelp(View view) {
+        // Use the Builder class for convenient dialog construction
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+        builder.setMessage("this is a test")
+                .setTitle("shoot it");
+
+        /**
+        builder.setMessage("this is a test message")
+                .setPositiveButton("action1", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // FIRE ZE MISSILES!
+                    }
+                });
+         */
+
+        // Create the AlertDialog object and return it
+        return builder.create();
+    }
 }
