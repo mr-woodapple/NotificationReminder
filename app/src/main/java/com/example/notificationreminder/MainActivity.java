@@ -1,16 +1,13 @@
 package com.example.notificationreminder;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import android.app.Dialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,20 +17,29 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+
 import com.google.android.material.snackbar.Snackbar;
+import com.tomergoldst.tooltips.ToolTip;
+import com.tomergoldst.tooltips.ToolTipsManager;
 
 
 public class MainActivity extends AppCompatActivity {
 
-
+    // variable used to generate notificationIds for variables
     public int notificationId;
-
+    // Creates a tooltip manager
+    ToolTipsManager mToolTipsManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Create the tooltipManager object
+        mToolTipsManager = new ToolTipsManager();
 
         // Register toolbar as top app bar
         Toolbar topAppBar = (Toolbar) findViewById(R.id.topAppBar);
@@ -182,23 +188,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Called when the user taps the "help icon" right next to the "Set permanent" checkbox
-    public Dialog seeHelp(View view) {
-        // Use the Builder class for convenient dialog construction
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+    public void seeHelp(View view) {
 
-        builder.setMessage("this is a test")
-                .setTitle("shoot it");
+        RelativeLayout layout = findViewById(R.id.wrapperLayoutCardDesign);
+        LinearLayout layoutView = findViewById(R.id.linearLayoutPermanentCheckbox);
 
-        /**
-        builder.setMessage("this is a test message")
-                .setPositiveButton("action1", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // FIRE ZE MISSILES!
-                    }
-                });
-         */
+        // Create tooltip
+        String message = getString(R.string.tooltip_checkboxSetPermanent);
+        ToolTip.Builder builder = new ToolTip
+                .Builder(this, layoutView, layout, message, ToolTip.POSITION_ABOVE);
 
-        // Create the AlertDialog object and return it
-        return builder.create();
+        // Show tooltip
+        mToolTipsManager.show(builder.build());
+
+
     }
 }
