@@ -13,4 +13,5 @@
     <string name="info_aboutPageText">Notify ist eine einfach Art genau dort Erinnerungen zu erstellen, wo Sie oft hinschauen: In Ihren Benachrichtungen.</string>
     <string name="activityName_about">Über Notify</string>
     <string name="info_checkboxSetPermanent">Benachrichtigung anpinnen?</string>
+    <string name="tooltip_checkboxSetPermanent">Anpinnen bedeutet, dass Sie die Benachrichtung aktiv löschen müssen und diese nicht aus Versehen wegwischen können.</string>
 </resources>
