@@ -11,7 +11,7 @@ The app is available on Google Play here: https://play.google.com/store/apps/det
 - Fixed translations
 - Added dialog and removed custom tooltip for a better UX experience
 - Updated gradle to v8.3.1
-- Updated to SDK 34
+- Updated targetSDK to SDK 33
 
 ### v0.3
 - Added option to make notifications permanent (you cannot swipe them away accidentally)
