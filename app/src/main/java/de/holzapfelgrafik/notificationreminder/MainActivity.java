@@ -1,4 +1,4 @@
-package com.example.notificationreminder;
+package de.holzapfelgrafik.notificationreminder;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

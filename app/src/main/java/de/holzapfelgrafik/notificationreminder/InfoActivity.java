@@ -1,11 +1,9 @@
-package com.example.notificationreminder;
+package de.holzapfelgrafik.notificationreminder;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
-import com.example.notificationreminder.BuildConfig;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class InfoActivity extends AppCompatActivity {
 

@@ -3,16 +3,20 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId 'de.holzapfelgrafik.notificationreminder'
         minSdk 27
-        targetSdk 32
-        versionCode 6
+        targetSdk 33
+        versionCode 7
         versionName '0.4.0'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
@@ -31,11 +35,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    namespace 'com.example.notificationreminder'
+    namespace 'de.holzapfelgrafik.notificationreminder'
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.6.0-alpha02'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
