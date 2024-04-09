@@ -8,10 +8,12 @@
     <string name="delete">Löschen</string>
     <string name="btn_create_reminder">Erinnerung erstellen</string>
     <string name="info_createReminderHeading">Neue Erinnerung erstellen</string>
-    <string name="info_createReminderSubtext">Überschrift und Text der Erinnerung angeben</string>
+    <string name="info_createReminderSubtext">Überschrift und Text der Erinnerung eingeben:</string>
     <string name="snackbar_notificationCreated">Erinnerung wurde erstellt</string>
     <string name="info_aboutPageText">Notify ist eine einfach Art genau dort Erinnerungen zu erstellen, wo Sie oft hinschauen: In Ihren Benachrichtungen.</string>
     <string name="activityName_about">Über Notify</string>
     <string name="info_checkboxSetPermanent">Benachrichtigung anpinnen?</string>
-    <string name="tooltip_checkboxSetPermanent">Anpinnen bedeutet, dass Sie die Benachrichtung aktiv löschen müssen und diese nicht aus Versehen wegwischen können.</string>
+    <string name="infoDialog_setPermanent_Title">Benachrichtigung anpinnen?</string>
+    <string name="infoDialog_setPermanent_Message">Anpinnen bedeutet, dass Sie die Benachrichtung aktiv löschen müssen und diese nicht aus Versehen wegwischen können.</string>
+    <string name="infoDialog_setPermanent_PositiveAction">Verstanden</string>
 </resources>

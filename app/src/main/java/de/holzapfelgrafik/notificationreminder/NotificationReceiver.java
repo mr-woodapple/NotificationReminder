@@ -1,4 +1,4 @@
-package com.example.notificationreminder;
+package de.holzapfelgrafik.notificationreminder;
 
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;

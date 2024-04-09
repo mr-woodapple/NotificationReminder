@@ -7,10 +7,12 @@
     <string name="delete">Delete</string>
     <string name="btn_create_reminder">Create Reminder</string>
     <string name="info_createReminderHeading">Create a new reminder</string>
-    <string name="info_createReminderSubtext">Enter title and description of your reminder</string>
+    <string name="info_createReminderSubtext">Enter title and description of your reminder:</string>
     <string name="snackbar_notificationCreated">Reminder was set</string>
-    <string name="info_aboutPageText">Notify is a quick and easy to use way to set a reminder in your notifications, the place you\'ll check regulary on your phone.</string>
+    <string name="info_aboutPageText">Notify is a quick and easy to use way to set a reminder in your notifications, the place you\'ll check regularly on your phone.</string>
     <string name="activityName_about">About Notify</string>
     <string name="info_checkboxSetPermanent">Make notification permanent?</string>
-    <string name="tooltip_checkboxSetPermanent">Making a notification permanent means that you actively need to delete it, instead of accidently swiping it away.</string>
+    <string name="infoDialog_setPermanent_Title">Permanent notification?</string>
+    <string name="infoDialog_setPermanent_Message">Making a notification permanent means that you actively need to delete it, instead of accidentally swiping it away.</string>
+    <string name="infoDialog_setPermanent_PositiveAction">Got it</string>
 </resources>
