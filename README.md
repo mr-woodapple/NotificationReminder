@@ -13,7 +13,7 @@ The app is available on Google Play here: https://play.google.com/store/apps/det
 - Updated gradle to v8.3.1
 - Updated targetSDK to SDK 33
 
-### v0.3
+### V 0.3
 - Added option to make notifications permanent (you cannot swipe them away accidentally)
 - Added a "Delete" button to the notification
 - If the input for the notification text is empty, the title will be duplicated into the text
